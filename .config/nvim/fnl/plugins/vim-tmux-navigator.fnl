@@ -1,0 +1,2 @@
+[{1 :christoomey/vim-tmux-navigator
+  :lazy false}]

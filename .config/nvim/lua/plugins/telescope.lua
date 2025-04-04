@@ -2,8 +2,8 @@
 local function _1_()
   vim.keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<CR>", {noremap = true})
   vim.keymap.set("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
-  vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers()<CR>", {noremap = true})
-  return vim.keymap.set("n", "<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
+  vim.keymap.set("n", "<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
+  return vim.keymap.set("n", "<leader><space>", ":lua require('telescope.builtin').buffers()<CR>", {noremap = true})
 end
 local function _2_()
   local telescope = require("telescope")

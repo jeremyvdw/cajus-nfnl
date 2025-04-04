@@ -6,6 +6,8 @@
 
 ;space is reserved to be lead
 (vim.keymap.set :n :<space> :<nop> {:noremap true})
+; jk is ESC in insert mode
+(vim.keymap.set :i :jk :<ESC> {:noremap true})
 
 ;sets a nvim global options
 (let [options
