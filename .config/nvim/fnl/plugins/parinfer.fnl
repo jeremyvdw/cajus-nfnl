@@ -1,9 +1,7 @@
-[{1 :julienvincent/nvim-paredit
-  :lazy true
-  :ft [:clojure :fennel :scheme :lisp]
-  :config (fn []
-            (let [paredit (require :nvim-paredit)]
-              (paredit.setup)))}
+[{1 :eraserhd/parinfer-rust
+  :event "VeryLazy"
+  :build "cargo build --release"
+  :cmd "ParinferOn"}
 
  {1 :kylechui/nvim-surround
   :event "VeryLazy"

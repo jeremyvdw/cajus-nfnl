@@ -15,7 +15,7 @@
 
       ; if hasn't progress handler, but has connected lsp client
       (and (= message.status "")
-           (not (vim.tbl_isempty (vim.lsp.buf_get_clients 0))))
+           (not (vim.tbl_isempty (vim.lsp.get_clients 0))))
       ""
 
       ; else
@@ -25,7 +25,7 @@
   :config (fn []
             (let [lualine (require :lualine)]
               (lualine.setup
-                {:options {:theme "tokyonight"
+                {:options {:theme "catppuccin"
                            :icons_enabled true
                            :section_separators ["" ""]
                            :component_separators ["" ""]}

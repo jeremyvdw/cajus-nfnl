@@ -38,19 +38,20 @@
                                     :<C-e> (cmp.mapping.close)
                                     :<CR> (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Insert
                                                                 :select true})
-                                    :<Tab> (cmp.mapping (fn [fallback]
-                                                          (if
-                                                            (cmp.visible) (cmp.select_next_item)
-                                                            (luasnip.expand_or_jumpable) (luasnip.expand_or_jump)
-                                                            (has-words-before) (cmp.complete)
-                                                            :else (fallback)))
-                                                        {1 :i 2 :s})
-                                    :<S-Tab> (cmp.mapping (fn [fallback]
-                                                            (if
-                                                              (cmp.visible) (cmp.select_prev_item)
-                                                              (luasnip.jumpable -1) (luasnip.jump -1)
-                                                              :else (fallback)))
-                                                          {1 :i 2 :s})}
+                                    :<down> (cmp.mapping (fn [fallback]
+                                                           (if
+                                                             (cmp.visible) (cmp.select_next_item)
+                                                             (luasnip.expand_or_jumpable) (luasnip.expand_or_jump)
+                                                             (has-words-before) (cmp.complete)
+                                                             :else (fallback)))
+                                                         {1 :i 2 :s})
+                                    :<up> (cmp.mapping (fn [fallback]
+                                                         (if
+                                                           (cmp.visible) (cmp.select_prev_item)
+                                                           (luasnip.jumpable -1) (luasnip.jump -1)
+                                                           :else (fallback)))
+                                                       {1 :i 2 :s})
+                                    :<right> (cmp.mapping.complete)}
                           :snippet {:expand (fn [args]
                                               (luasnip.lsp_expand args.body))}
                           :sources cmp-srcs})))}]

@@ -1,0 +1,2 @@
+-- [nfnl] Compiled from fnl/plugins/tmux-navigator.fnl by https://github.com/Olical/nfnl, do not edit.
+return {{"christoomey/vim-tmux-navigator", cmd = {"TmuxNavigateLeft", "TmuxNavigateDown", "TmuxNavigateUp", "TmuxNavigateRight", "TmuxNavigatePrevious", "TmuxNavigatorProcessList"}, keys = {{"<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>"}, {"<c-f>", "<cmd><C-U>TmuxNavigateDown<cr>"}, {"<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>"}, {"<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>"}, {"<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>"}}, lazy = false}}

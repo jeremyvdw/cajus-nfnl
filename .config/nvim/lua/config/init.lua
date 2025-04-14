@@ -3,6 +3,9 @@ local _local_1_ = require("nfnl.module")
 local autoload = _local_1_["autoload"]
 local core = autoload("nfnl.core")
 vim.keymap.set("n", "<space>", "<nop>", {noremap = true})
+vim.keymap.set("i", "jk", "<ESC>", {noremap = true})
+vim.keymap.set("n", "<TAB>", ":bn<CR>", {noremap = true})
+vim.keymap.set("n", "<S-TAB>", ":bp<CR>", {noremap = true})
 do
   local options = {expandtab = true, tabstop = 2, shiftwidth = 2, softtabstop = 2, completeopt = "menuone,noselect", ignorecase = true, smartcase = true, clipboard = "unnamedplus", number = true, ruler = true, signcolumn = "number"}
   for option, value in pairs(options) do

@@ -4,6 +4,13 @@
 ;space is reserved to be lead
 (vim.keymap.set :n :<space> :<nop> {:noremap true})
 
+; jk is for ESC
+(vim.keymap.set :i :jk :<ESC> {:noremap true})
+
+; TAB/S-TAB is for switching buffers
+(vim.keymap.set :n :<TAB> ":bn<CR>" {:noremap true})
+(vim.keymap.set :n :<S-TAB> ":bp<CR>" {:noremap true})
+
 ;sets a nvim global options
 (let [options
       {;tabs is space
