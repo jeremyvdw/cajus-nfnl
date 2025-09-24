@@ -17,12 +17,15 @@
     (and (not= col 0)
          (= (: (: (. (vim.api.nvim_buf_get_lines 0 (- line 1) line true) 1) :sub col col) :match "%s") nil))))
 
-[{1 :hrsh7th/nvim-cmp
+[{1 :L3MON4D3/LuaSnip
+  :version "v2.*"
+  :build "make install_jsregexp"}
+ {1 :hrsh7th/nvim-cmp
   :dependencies [:hrsh7th/cmp-buffer
                  :hrsh7th/cmp-nvim-lsp
                  :hrsh7th/cmp-vsnip
                  :PaterJason/cmp-conjure
-                 :L3MON4D3/LuaSnip
+                 ; :L3MON4D3/LuaSnip
                  :saadparwaiz1/cmp_luasnip]
   :config (fn []
             (let [cmp (require :cmp)
