@@ -34,5 +34,4 @@
   :ft [:clojure :fennel :commonlisp :janet :racket]}
 
  {1 :tpope/vim-fugitive
-  :lazy true
-  :ft [:clojure :commonlisp :janet :racket :java :python :ruby]}]
+  :lazy true}]
