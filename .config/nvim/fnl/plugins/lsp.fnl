@@ -51,6 +51,8 @@
                                   :handlers handlers
                                   :before_init before_init})
 
+              ;; Gleam
+              (vim.lsp.enable :gleam)
               ;; Clojure
               (vim.lsp.config :clojure_lsp {:root_dir (fn [bufnr on_dir]
                                                         (let [pattern (vim.api.nvim_buf_get_name bufnr)

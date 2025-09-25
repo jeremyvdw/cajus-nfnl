@@ -29,6 +29,7 @@ local function _1_()
   end
   on_attach = _3_
   vim.lsp.config("*", {on_attach = on_attach, handlers = handlers, before_init = before_init})
+  vim.lsp.enable("gleam")
   local function _4_(bufnr, on_dir)
     local pattern = vim.api.nvim_buf_get_name(bufnr)
     local util = require("lspconfig.util")
