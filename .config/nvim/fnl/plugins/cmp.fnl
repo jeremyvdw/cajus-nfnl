@@ -27,7 +27,7 @@
          :signature {:enabled true
                      :trigger {:show_on_keyword true
                                :show_on_insert true}
-                     :window {:border 1}}
+                     :window {:show_documentation false}}
 
          :snippets {:preset :luasnip}
 
