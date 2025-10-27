@@ -51,6 +51,8 @@
                                   :handlers handlers
                                   :before_init before_init})
 
+              ;; Python
+              (vim.lsp.enable :ruff)
               ;; Gleam
               (vim.lsp.enable :gleam)
               ;; Clojure
