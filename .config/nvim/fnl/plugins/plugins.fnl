@@ -11,10 +11,7 @@
  {1 :kylechui/nvim-surround
   :lazy true
   :event "VeryLazy"
-  :ft [:clojure :fennel :commonlisp :janet :racket]
-  :config (fn []
-            (let [surround (require :nvim-surround)]
-              (surround.setup)))}
+  :ft [:clojure :fennel :commonlisp :janet :racket]}
 
  {1 :guns/vim-sexp
   :lazy true
