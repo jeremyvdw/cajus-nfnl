@@ -10,6 +10,7 @@
                                                     :commonlisp
                                                     :dockerfile
                                                     :fennel
+                                                    :gleam
                                                     :html
                                                     :janet_simple
                                                     :java
