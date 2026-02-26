@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/catppuccin.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/catppuccin.fnl
 local function _1_()
   local theme = require("catppuccin")
   theme.setup({flavour = "mocha"})
