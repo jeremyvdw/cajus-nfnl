@@ -5,6 +5,6 @@
   :config (fn []
             (let [theme (require :catppuccin)]
               (theme.setup {:flavour :mocha})
-              (vim.cmd "colorscheme catppuccin")))}
+              (vim.cmd "colorscheme catppuccin-nvim")))}
  {1 :nvim-tree/nvim-web-devicons
   :lazy false}]

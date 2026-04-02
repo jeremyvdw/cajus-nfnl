@@ -26,7 +26,7 @@
             (let [lualine (require :lualine)]
               (lualine.setup
                 {:build "make install_jsregexp"
-                 :options {:theme "catppuccin"}})))}]
+                 :options {:theme "catppuccin-nvim"}})))}]
                  ;           :icons_enabled true
                  ;           :section_separators ["" ""]
                  ;           :component_separators ["" ""]}

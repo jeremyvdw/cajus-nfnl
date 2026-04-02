@@ -6,37 +6,29 @@
 
 [{1 :neovim/nvim-lspconfig
   :config (fn []
-            (let [handlers {"textDocument/publishDiagnostics"
-                            (vim.lsp.with
-                              vim.lsp.diagnostic.on_publish_diagnostics
-                              {:severity_sort true
-                               :update_in_insert true
-                               :underline true
-                               :virtual_text false})
-                            "textDocument/hover"
-                            (vim.lsp.with
-                              vim.lsp.handlers.hover
-                              {:border "single"})
-                            "textDocument/signatureHelp"
-                            (vim.lsp.with
-                              vim.lsp.handlers.signature_help
-                              {:border "single"})}
-
+            (let [diag_opts {:severity_sort true
+                             :update_in_insert true
+                             :underline true
+                             :virtual_text false}
+                  hover_opts {:border "single"
+                              :max_height 25
+                              :max_width 120}
+                  signature_help_opts {:border "single"}
                   before_init (fn [params]
                                 (set params.workDoneToken :1))
                   on_attach (fn [client bufnr]
                               (do
-                                (vim.api.nvim_buf_set_keymap bufnr :n :K          "<cmd>lua vim.lsp.buf.hover()<cr>" {:noremap true})
+                                (vim.api.nvim_buf_set_keymap bufnr :n :K          "<cmd>lua vim.lsp.buf.hover(hover_opts)<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :gd         "<cmd>lua vim.lsp.buf.definition()<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>ld "<cmd>lua vim.lsp.buf.declaration()<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lt "<cmd>lua vim.lsp.buf.type_definition()<cr>" {:noremap true})
-                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lh "<cmd>lua vim.lsp.buf.signature_help()<cr>" {:noremap true})
+                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lh "<cmd>lua vim.lsp.buf.signature_help(signature_help_opts)<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>ln "<cmd>lua vim.lsp.buf.rename()<cr>" {:noremap true})
-                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>le "<cmd>lua vim.diagnostic.open_float()<cr>" {:noremap true})
+                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>le "<cmd>lua vim.diagnostic.open_float(diag_opts)<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lq "<cmd>lua vim.diagnostic.setloclist()<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lf "<cmd>lua vim.lsp.buf.format()<cr>" {:noremap true})
-                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lj "<cmd>lua vim.diagnostic.goto_next()<cr>" {:noremap true})
-                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lk "<cmd>lua vim.diagnostic.goto_prev()<cr>" {:noremap true})
+                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lj "<cmd>lua vim.diagnostic.get_next(diag_opts)<cr>" {:noremap true})
+                                (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lk "<cmd>lua vim.diagnostic.get_prev(diag_opts)<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>la "<cmd>lua vim.lsp.buf.code_action()<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :v :<leader>la "<cmd>lua vim.lsp.buf.range_code_action()<cr> " {:noremap true})
                                 ;telescope
@@ -45,7 +37,7 @@
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('telescope.builtin').lsp_implementations()<cr>" {:noremap true})))]
 
               ;; For more language servers check:
-              ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+              ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.txt
 
               (vim.lsp.config :* {:on_attach on_attach
                                   :handlers handlers

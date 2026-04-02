@@ -16,6 +16,6 @@ local function lsp_connection()
 end
 local function _3_()
   local lualine = require("lualine")
-  return lualine.setup({build = "make install_jsregexp", options = {theme = "catppuccin"}})
+  return lualine.setup({build = "make install_jsregexp", options = {theme = "catppuccin-nvim"}})
 end
 return {{"nvim-lualine/lualine.nvim", config = _3_}}
