@@ -14,6 +14,7 @@
   :ft [:clojure :fennel :commonlisp :janet :racket]}
 
  {1 :guns/vim-sexp
+  :commit "f627e735d34c521d0c31265f7bc0a4c01160f897" ; when it was good
   :lazy true
   :ft [:clojure :fennel :commonlisp :janet :racket]}
 
